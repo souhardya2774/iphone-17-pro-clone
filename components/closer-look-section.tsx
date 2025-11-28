@@ -41,7 +41,7 @@ const features = [
   },
 ]
 
-export default function CloserLookSection() {
+export function CloserLookSection() {
   const [activeFeature, setActiveFeature] = useState("colours")
   const [activeColorIndex, setActiveColorIndex] = useState(0)
 
