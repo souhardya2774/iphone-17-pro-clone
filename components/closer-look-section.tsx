@@ -111,19 +111,23 @@ export function CloserLookSection() {
           {/* Feature Display */}
           <div className="flex-1 flex flex-col items-center justify-center">
             <div className="relative w-full max-w-md">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-3xl bg-[#2a2a2c]">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-3xl bg-[#2a2a2c] flex items-center justify-center p-4">
                 {/* Regular feature images */}
                 {features
                   .filter((f) => !f.images)
                   .map((feature) => (
-                    <img
+                    <div
                       key={feature.id}
-                      src={feature.image || "/placeholder.svg"}
-                      alt={feature.label}
-                      className={`absolute inset-0 w-full h-full object-contain transition-all duration-500 ${
+                      className={`absolute inset-0 flex items-center justify-center p-4 transition-all duration-500 ${
                         activeFeature === feature.id ? "opacity-100 scale-100" : "opacity-0 scale-95"
                       }`}
-                    />
+                    >
+                      <img
+                        src={feature.image || "/placeholder.svg"}
+                        alt={feature.label}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                   ))}
 
                 {/* Color images */}
